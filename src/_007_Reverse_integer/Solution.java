@@ -20,6 +20,8 @@ public class Solution {
             int curNum = x % 10;
             int newRev = rev * 10 + curNum;
             //判断用新值计算出的rev和原来的rev一不一样,不一样就是数据溢出了
+            //判断是否溢出还有一种方法是判断乘以10之前原来rev大小和Integer.MAX_VALUE/10或Integer.MIN_VALUE/10的关系
+            // 以及个位数和7或-8的关系(因为int的上下届的个位数分别是7和8(负数))
             if ((newRev - curNum) / 10 != rev) {
                 return 0;
             }
