@@ -1,9 +1,11 @@
 package _002_Add_two_Numbers;
 
 /**
+ * 两个链表数组按位相加
+ * 第一种方法:简单粗暴法
  * Created by dzj on 2019.9.10.
  */
-public class AddTwoNumbers1 {
+public class Solution1 {
 
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -22,13 +24,13 @@ public class AddTwoNumbers1 {
         //默认进位置为0
         int carry = 0;
         //l1和l2都还没到结尾的情况下
-        while(l1 != null && l2 != null){
+        while (l1 != null && l2 != null) {
             //先计算l1,l2,carry累加的结果
-            int addRslt = l1.val+l2.val+carry;
+            int addRslt = l1.val + l2.val + carry;
             //计算结果链表当前位的值
-            int cVal = addRslt%10;
+            int cVal = addRslt % 10;
             //计算结果链表当前位置的进位值
-            carry = addRslt/10;
+            carry = addRslt / 10;
             ListNode aRsltNode = new ListNode(cVal);
             currNode.next = aRsltNode;
             currNode = aRsltNode;
@@ -36,13 +38,13 @@ public class AddTwoNumbers1 {
             l1 = l1.next;
         }
         // l2提前完成的情况下
-        while(l1 !=null){
+        while (l1 != null) {
             //l1和进位计算累加值
-            int addRslt = l1.val+carry;
+            int addRslt = l1.val + carry;
             //计算结果链表当前节点的值
-            int cVal = addRslt%10;
+            int cVal = addRslt % 10;
             //计算进位
-            carry = addRslt/10;
+            carry = addRslt / 10;
             ListNode aRsltNode = new ListNode(cVal);
             currNode.next = aRsltNode;
             currNode = aRsltNode;
@@ -50,20 +52,20 @@ public class AddTwoNumbers1 {
         }
 
         //l1提前完成的情况下
-        while(l2 !=null){
+        while (l2 != null) {
             //l2和进位计算累加值
-            int addRslt = l2.val+carry;
+            int addRslt = l2.val + carry;
             //计算结果链表当前节点的值
-            int cVal = addRslt%10;
+            int cVal = addRslt % 10;
             //计算进位
-            carry = addRslt/10;
+            carry = addRslt / 10;
             ListNode aRsltNode = new ListNode(cVal);
             currNode.next = aRsltNode;
             currNode = aRsltNode;
             l2 = l2.next;
         }
         //注意最后还有个进位要处理
-        if(carry != 0){
+        if (carry != 0) {
             currNode.next = new ListNode(carry);
         }
         //跳过dummy节点返回链表
@@ -74,20 +76,21 @@ public class AddTwoNumbers1 {
     public static class ListNode {
         int val;
         ListNode next;
-        ListNode(int x){
+
+        ListNode(int x) {
             val = x;
         }
     }
 
-    private static void printListNode(ListNode head){
+    private static void printListNode(ListNode head) {
         StringBuilder sb = new StringBuilder("Node: ");
-        if(head != null){
+        if (head != null) {
             sb.append(head.val);
-            while(head.next != null){
-                sb.append("->"+head.next.val);
+            while (head.next != null) {
+                sb.append("->" + head.next.val);
                 head = head.next;
             }
-        }else{
+        } else {
             sb.append("EMPTY!");
         }
 

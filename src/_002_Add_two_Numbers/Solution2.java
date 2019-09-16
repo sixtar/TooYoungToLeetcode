@@ -1,9 +1,11 @@
 package _002_Add_two_Numbers;
 
 /**
+ * 两个链表数组按位相加
+ * 第二种方法:巧用三位运算符和判断语句
  * Created by dzj on 2019.9.10.
  */
-public class AddTwoNumbers2 {
+public class Solution2 {
 
 
     /**

@@ -1,6 +1,7 @@
 package _006_Zigzag_conversion;
 
 /**
+ * 拉链方式转换
  * Created by dzj on 2019.9.13.
  */
 public class Solution {

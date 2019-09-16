@@ -4,16 +4,17 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /**
+ * 给定数组和给定数字,找出数组中相加结果和给定数字一样的两个数字的索引
  * Created by dzj on 2019.9.9.
  */
-public class TwoSum1 {
+public class Solution {
 
     /**
      * 思路是用一个map存放 值:索引 格式的数据
      * 主要是遍历时不能回头,每个数据只访问一次，区别于原始简单粗暴方法:两个指针去遍历(时间复杂度O(n^2))
      * 这里的时间复杂度是O(n),空间复杂度是O(n)
      *
-     * @param nums 入参数组
+     * @param nums   入参数组
      * @param target 要查找的和
      * @return 返回两个索引位置的数组
      */
