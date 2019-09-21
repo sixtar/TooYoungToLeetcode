@@ -28,7 +28,7 @@ public class Solution {
             char cur = ch[i];
             isDigit = cur - '0' >= 0 && cur - '0' <= 9;
             // 如果遇到过符号,但是当前位不是数字则结束循环
-            //这个主要是处理"++100"这个情况的,没有这段代码,也能通过
+            //这个主要是处理"++100"这个情况的,没有这段代码,"++100"也能通过
             if (signSeen && !isDigit) {
                 break;
             }
