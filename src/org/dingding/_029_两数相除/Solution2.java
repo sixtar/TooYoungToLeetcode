@@ -58,7 +58,7 @@ public class Solution2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().divide(10, 3));
+        System.out.println(new Solution2().divide(10, 3));
 
     }
 
