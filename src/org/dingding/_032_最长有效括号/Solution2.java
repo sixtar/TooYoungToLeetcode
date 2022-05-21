@@ -2,6 +2,8 @@ package org.dingding._032_最长有效括号;
 
 /**
  * 动态规划的解法
+ * 动态规划的思路是确定最后一步，然后化为子问题（前面的步骤的解），分析问题得出转移方程(不同情况下当前问题和子问题的关系)
+ * 需要注意初始条件和一些边界问题
  * 因为最长匹配括号只要看当前的位置向前就行，所以一维dp数组即可
  * 看了题解 https://leetcode.cn/problems/longest-valid-parentheses/solution/dong-tai-gui-hua-si-lu-xiang-jie-c-by-zhanganan042/
  */
