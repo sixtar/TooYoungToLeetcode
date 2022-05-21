@@ -40,7 +40,7 @@ public class Solution2 {
                     if (dp[i - 1] > 0) {
                         // 判断i和它前面对应的位置是否匹配，可以用i-1的位置计算
                         int iLeftMatchIdx = i - dp[i - 1] - 1;
-                        if (iLeftMatchIdx > 0 && s.charAt(iLeftMatchIdx) == '(') {
+                        if (iLeftMatchIdx >= 0 && s.charAt(iLeftMatchIdx) == '(') {
                             dp[i] = dp[i - 1] + 2;
                             // 容易漏掉的情形
                             // 但是可能出现 ()((()))的情形，iLeftMatchIdx前面还有匹配的括号串，需要加上
